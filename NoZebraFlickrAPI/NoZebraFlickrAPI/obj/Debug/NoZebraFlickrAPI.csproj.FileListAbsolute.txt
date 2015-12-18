@@ -1,0 +1,5 @@
+C:\Users\Jonas Bjerrum\Desktop\nozebra\NoZebraFlickrAPI\NoZebraFlickrAPI\bin\Debug\NoZebraFlickrAPI.dll
+C:\Users\Jonas Bjerrum\Desktop\nozebra\NoZebraFlickrAPI\NoZebraFlickrAPI\bin\Debug\NoZebraFlickrAPI.pdb
+C:\Users\Jonas Bjerrum\Desktop\nozebra\NoZebraFlickrAPI\NoZebraFlickrAPI\obj\Debug\NoZebraFlickrAPI.dll
+C:\Users\Jonas Bjerrum\Desktop\nozebra\NoZebraFlickrAPI\NoZebraFlickrAPI\obj\Debug\NoZebraFlickrAPI.pdb
+C:\Users\Jonas Bjerrum\Desktop\nozebra\NoZebraFlickrAPI\NoZebraFlickrAPI\obj\Debug\NoZebraFlickrAPI.csprojResolveAssemblyReference.cache

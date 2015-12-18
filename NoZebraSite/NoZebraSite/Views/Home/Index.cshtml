@@ -1,0 +1,53 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+        @using (Html.BeginForm())
+        {
+            <p>
+                <table>
+                    <tr><td>Title: </td><td>@Html.TextBox("txtSearch")</td></tr>
+                    
+                    <tr>
+                      <td>Sort by: </td>
+                      <td>
+                          @Html.DropDownList("orderBy", "None")
+
+                      </td>
+                    </tr>
+                    <tr><td colspan="2"><input type="submit" value="Update feed" /></td></tr>
+                </table>
+            </p>
+        }
+
+        <table border="1">
+            <tr>
+                <td>Title</td>
+                <td>Published</td>
+            </tr>
+            @foreach (NoZebraFlickrAPI.FlickrItem item in ViewBag.flickrFeed)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Published)
+                    </td>
+                </tr>
+                <tr><td colspan="2"><img src="@Html.DisplayFor(modelItem => item.ImageUrl)" alt="@Html.DisplayFor(modelItem => item.Title)" style="display:block;" width="500"></td></tr>
+            }
+        </table>
+    </div>
+</body>
+</html>
