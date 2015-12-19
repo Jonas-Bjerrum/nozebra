@@ -1,4 +1,6 @@
-﻿
+﻿@model PagedList.IPagedList<NoZebraFlickrAPI.FlickrItem>
+@using PagedList.Mvc;
+
 @{
     Layout = null;
 }
@@ -9,6 +11,7 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
+    <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <div> 
@@ -26,20 +29,29 @@
                       </td>
                     </tr>
                     <tr><td colspan="2"><input type="submit" value="Update feed" /></td></tr>
+                    <tr><td colspan="2">&nbsp;</td></tr>
+                    <tr>
+                      <td colspan="2">
+                          Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+                          @Html.PagedListPager(Model, page => Url.Action("Index", new { page, orderBy = ViewBag.CurrentSort, txtSearch = ViewBag.CurrentFilter }))
+
+                      </td>
+                    </tr>
                 </table>
             </p>
         }
 
         <div>
-            @foreach (NoZebraFlickrAPI.FlickrItem item in ViewBag.flickrFeed)
+            @foreach (var item in Model)
             {
-                <div style="border: 1px solid black; width: 300px; float: left; height: 350px; margin: 10px; overflow: hidden;">
+                <div style="border: 1px solid black; width: 200px; float: left; height: 200px; margin: 10px; overflow: hidden;">
                     <div>
                         <div style="border: 1px solid black; text-align: right;">@Html.DisplayFor(modelItem => item.Published)</div>
                         <div style="height: 40px; overflow:hidden;">@Html.DisplayFor(modelItem => item.Title)</div>
                     </div>
                     <div>
-                        <img src="@Html.DisplayFor(modelItem => item.ImageUrl)" alt="@Html.DisplayFor(modelItem => item.Title)" style="display:block; max-height: 400px; max-width: 300px;">
+                        <img src="@Html.DisplayFor(modelItem => item.ImageUrl)" alt="@Html.DisplayFor(modelItem => item.Title)" style="display:block; max-height: 140px; max-width: 200px;">
                     </div>
                 </div>
             }

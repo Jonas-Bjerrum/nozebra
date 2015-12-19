@@ -4,14 +4,19 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using NoZebraFlickrAPI;
+using NoZebraSite.Models;
+using PagedList;
 
 namespace NoZebraSite.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index(string txtSearch, string orderBy)
+        public ActionResult Index(string orderBy, string txtSearch, int? page)
         {
-            #region Sort fields
+            #region Initialize search controls
+            ViewBag.CurrentSort = orderBy;
+            ViewBag.CurrentFilter = txtSearch;
+
             //Initialize select box containing fields to sort with
             var OrderLst = new List<string>();
             OrderLst.Add(Helpers.SortByTypes.Title.ToString());
@@ -50,12 +55,15 @@ namespace NoZebraSite.Controllers
                     flickrItems = flickrItems.OrderBy(o => o.Published).ToList();
             }
 
-            ViewBag.flickrFeed = flickrItems.Skip(10).Take(10).ToList();
-
-            //ViewBag.flickrFeed = flickrItems;
+            //Initializing model and populate it with our flickr feed
+            FlickrModel flickrModel = new FlickrModel();
+            flickrModel.flickrFeed = flickrItems;
             #endregion
 
-            return View();
+            int pageSize = 10;
+            int pageNumber = (page ?? 1);
+
+            return View(flickrModel.flickrFeed.ToPagedList(pageNumber, pageSize));
         }
     }
 }

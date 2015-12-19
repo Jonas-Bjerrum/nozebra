@@ -38,3 +38,7 @@ C:\Users\Jonas Bjerrum\Documents\GitHub\nozebra\NoZebraSite\NoZebraSite\bin\Syst
 C:\Users\Jonas Bjerrum\Documents\GitHub\nozebra\NoZebraSite\NoZebraSite\obj\Debug\NoZebraSite.csprojResolveAssemblyReference.cache
 C:\Users\Jonas Bjerrum\Documents\GitHub\nozebra\NoZebraSite\NoZebraSite\obj\Debug\NoZebraSite.dll
 C:\Users\Jonas Bjerrum\Documents\GitHub\nozebra\NoZebraSite\NoZebraSite\obj\Debug\NoZebraSite.pdb
+C:\Users\Jonas Bjerrum\Desktop\nozebra\NoZebraSite\NoZebraSite\bin\PagedList.dll
+C:\Users\Jonas Bjerrum\Desktop\nozebra\NoZebraSite\NoZebraSite\bin\PagedList.Mvc.dll
+C:\Users\Jonas Bjerrum\Desktop\nozebra\NoZebraSite\NoZebraSite\bin\PagedList.xml
+C:\Users\Jonas Bjerrum\Desktop\nozebra\NoZebraSite\NoZebraSite\bin\PagedList.Mvc.xml
