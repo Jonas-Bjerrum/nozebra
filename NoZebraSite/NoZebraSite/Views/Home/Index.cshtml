@@ -30,24 +30,20 @@
             </p>
         }
 
-        <table border="1">
-            <tr>
-                <td>Title</td>
-                <td>Published</td>
-            </tr>
+        <div>
             @foreach (NoZebraFlickrAPI.FlickrItem item in ViewBag.flickrFeed)
             {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Title)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Published)
-                    </td>
-                </tr>
-                <tr><td colspan="2"><img src="@Html.DisplayFor(modelItem => item.ImageUrl)" alt="@Html.DisplayFor(modelItem => item.Title)" style="display:block;" width="500"></td></tr>
+                <div style="border: 1px solid black; width: 300px; float: left; height: 350px; margin: 10px; overflow: hidden;">
+                    <div>
+                        <div style="border: 1px solid black; text-align: right;">@Html.DisplayFor(modelItem => item.Published)</div>
+                        <div style="height: 40px; overflow:hidden;">@Html.DisplayFor(modelItem => item.Title)</div>
+                    </div>
+                    <div>
+                        <img src="@Html.DisplayFor(modelItem => item.ImageUrl)" alt="@Html.DisplayFor(modelItem => item.Title)" style="display:block; max-height: 400px; max-width: 300px;">
+                    </div>
+                </div>
             }
-        </table>
+        </div>
     </div>
 </body>
 </html>
