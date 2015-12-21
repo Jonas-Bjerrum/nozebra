@@ -63,7 +63,11 @@ namespace NoZebraSite.Controllers
             int pageSize = 10;
             int pageNumber = (page ?? 1);
 
-            return View(flickrModel.flickrFeed.ToPagedList(pageNumber, pageSize));
+            if (Request.IsAjaxRequest())
+                return (ActionResult)PartialView("ListFlickr", flickrModel.flickrFeed.ToPagedList(pageNumber, pageSize));
+            else
+                return View(flickrModel.flickrFeed.ToPagedList(pageNumber, pageSize));
+            
         }
     }
 }
