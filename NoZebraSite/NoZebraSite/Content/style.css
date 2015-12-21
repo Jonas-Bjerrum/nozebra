@@ -1,0 +1,52 @@
+﻿body {
+    font-family: Verdana;
+    font-size: 12px;
+}
+
+h1
+{
+    margin: 0px;
+    padding: 0px;
+}
+
+#txtSearch, #orderBy, .btnUpdateFeed
+{
+    width: 130px;
+}
+
+.pagination
+{margin: 0px;}
+
+.flickrItem
+{
+    border: 1px solid black; 
+    width: 200px; 
+    float: left; 
+    height: 200px; 
+    margin: 5px; 
+    overflow: hidden;
+}
+.flickrItemPublished
+{
+    border-bottom: 1px solid black; 
+    text-align: right;
+}
+.flickrItemTitle
+{
+    height: 30px; 
+    overflow:hidden;
+}
+
+.flickrItemPicture
+{
+    display:block; 
+    max-height: 140px; 
+    max-width: 200px; 
+    margin-left: auto; 
+    margin-right: auto;
+}
+
+hr
+{
+    border: 1px solid black;
+}

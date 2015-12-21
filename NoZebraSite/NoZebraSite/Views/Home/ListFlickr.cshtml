@@ -1,20 +1,21 @@
 ﻿@model PagedList.IPagedList<NoZebraFlickrAPI.FlickrItem>
 @using PagedList.Mvc;
-
-Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
-
-@Html.PagedListPager(Model, page => Url.Action("Index", new { page, orderBy = ViewBag.CurrentSort, txtSearch = ViewBag.CurrentFilter }))
 <div>
     @foreach (var item in Model)
     {
-        <div style="border: 1px solid black; width: 200px; float: left; height: 200px; margin: 10px; overflow: hidden;">
+        <div class="flickrItem">
             <div>
-                <div style="border: 1px solid black; text-align: right;">@Html.DisplayFor(modelItem => item.Published)</div>
-                <div style="height: 40px; overflow:hidden;">@Html.DisplayFor(modelItem => item.Title)</div>
+                <div class="flickrItemPublished">@Html.DisplayFor(modelItem => item.Published)</div>
+                <div class="flickrItemTitle">@Html.DisplayFor(modelItem => item.Title)</div>
             </div>
             <div>
-                <img src="@Html.DisplayFor(modelItem => item.ImageUrl)" alt="@Html.DisplayFor(modelItem => item.Title)" style="display:block; max-height: 140px; max-width: 200px;">
+                <img src="@Html.DisplayFor(modelItem => item.ImageUrl)" alt="@Html.DisplayFor(modelItem => item.Title)" class="flickrItemPicture">
             </div>
         </div>
     }
+</div>
+<div style="clear: both"></div>
+<hr />
+<div>
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page, orderBy = ViewBag.CurrentSort, txtSearch = ViewBag.CurrentFilter }))
 </div>

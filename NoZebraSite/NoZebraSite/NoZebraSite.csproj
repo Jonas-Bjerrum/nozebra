@@ -89,6 +89,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\PagedList.css" />
+    <Content Include="Content\style.css" />
     <Content Include="Global.asax" />
     <Content Include="script\jquery.js" />
     <Content Include="Web.config" />
